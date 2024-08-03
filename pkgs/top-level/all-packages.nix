@@ -40226,4 +40226,6 @@ with pkgs;
   dillo = callPackage ../by-name/di/dillo/package.nix {
     fltk = fltk13;
   };
+
+  mongoose-im = callPackage ../applications/networking/instant-messengers/mongoose-im/default.nix {};
 }
