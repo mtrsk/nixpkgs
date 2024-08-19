@@ -31,6 +31,19 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ makeWrapper ];
 
   configurePhase = ''
+    mkdir -p $out/tools
+    cp -r $src/tools $out/tools
+    chmod +x $out/tools/configure
+  '';
+
+  #installPhase = ''
+  #  mkdir -p $out/bin
+  #  cp -r $src $out/bin/dagger
+  #  chmod +x $out/bin/dagger
+  #'';
+
+  buildPhase = ''
+    make
   '';
 
   meta = {
